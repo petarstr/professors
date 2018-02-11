@@ -39,15 +39,15 @@ class DeviseTokenAuthCreateProfessors < ActiveRecord::Migration[5.0]
       t.string :last_name
       t.string :image
       t.string :email
-      t.integer :mobile_phone
-      t.integer :phone
+      t.string :mobile_phone
+      t.string :phone
       t.integer :faculty_id
       t.integer :city_id
       t.string :facebook
       t.string :street_name
       t.string :street_number
-      t.integer :floor
-      t.integer :apartment_number
+      t.string :floor
+      t.string :apartment_number
 
       ## Tokens
       t.json :tokens

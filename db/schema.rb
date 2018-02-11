@@ -17,23 +17,23 @@ ActiveRecord::Schema.define(version: 20180209095940) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",                                       null: false
-    t.datetime "created_at", default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at", default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at", default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at", default: '2018-02-09 17:38:11', null: false
   end
 
   create_table "courses", force: :cascade do |t|
     t.string   "title",                                      null: false
     t.integer  "faculty_id",                                 null: false
-    t.datetime "created_at", default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at", default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at", default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at", default: '2018-02-09 17:38:11', null: false
     t.index ["faculty_id"], name: "index_courses_on_faculty_id", using: :btree
   end
 
   create_table "faculties", force: :cascade do |t|
     t.string   "name",                                       null: false
     t.integer  "city_id",                                    null: false
-    t.datetime "created_at", default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at", default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at", default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at", default: '2018-02-09 17:38:11', null: false
     t.index ["city_id"], name: "index_faculties_on_city_id", using: :btree
   end
 
@@ -44,16 +44,16 @@ ActiveRecord::Schema.define(version: 20180209095940) do
     t.integer  "number_of_sessions",                                 null: false
     t.boolean  "user_place",         default: false
     t.boolean  "professor_place",    default: true
-    t.datetime "created_at",         default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at",         default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at",         default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at",         default: '2018-02-09 17:38:11', null: false
     t.index ["professor_id"], name: "index_offers_on_professor_id", using: :btree
   end
 
   create_table "offers_subjects", force: :cascade do |t|
     t.integer  "offer_id",                                   null: false
     t.integer  "subject_id",                                 null: false
-    t.datetime "created_at", default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at", default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at", default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at", default: '2018-02-09 17:38:11', null: false
     t.index ["offer_id", "subject_id"], name: "index_offers_subjects_on_offer_id_and_subject_id", unique: true, using: :btree
     t.index ["offer_id"], name: "index_offers_subjects_on_offer_id", using: :btree
     t.index ["subject_id"], name: "index_offers_subjects_on_subject_id", using: :btree
@@ -88,15 +88,15 @@ ActiveRecord::Schema.define(version: 20180209095940) do
     t.string   "last_name"
     t.string   "image"
     t.string   "email"
-    t.integer  "mobile_phone"
-    t.integer  "phone"
+    t.string   "mobile_phone"
+    t.string   "phone"
     t.integer  "faculty_id"
     t.integer  "city_id"
     t.string   "facebook"
     t.string   "street_name"
     t.string   "street_number"
-    t.integer  "floor"
-    t.integer  "apartment_number"
+    t.string   "floor"
+    t.string   "apartment_number"
     t.json     "tokens"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
@@ -121,8 +121,8 @@ ActiveRecord::Schema.define(version: 20180209095940) do
     t.string   "title",                                      null: false
     t.integer  "year",                                       null: false
     t.integer  "course_id",                                  null: false
-    t.datetime "created_at", default: '2018-02-09 10:18:32', null: false
-    t.datetime "updated_at", default: '2018-02-09 10:18:32', null: false
+    t.datetime "created_at", default: '2018-02-09 17:38:11', null: false
+    t.datetime "updated_at", default: '2018-02-09 17:38:11', null: false
     t.index ["course_id"], name: "index_subjects_on_course_id", using: :btree
     t.index ["title", "course_id"], name: "index_subjects_on_title_and_course_id", unique: true, using: :btree
   end

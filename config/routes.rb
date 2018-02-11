@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   mount_devise_token_auth_for 'Professor', at: 'professor'
   as :professor do
-    # Define routes for Professor within this block.
+    resources :professors, only: [:edit, :update] do
+      resources :offers
+    end
   end
 end
