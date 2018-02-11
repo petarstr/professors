@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'user'
+
+  mount_devise_token_auth_for 'User', at: 'user', :skip => [:edit_user_registrations]
+  resources :users, only: [:edit, :update]
 
   resources :cities, only: [:index]
 

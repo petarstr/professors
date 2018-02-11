@@ -29,6 +29,10 @@ gem 'puma', '~> 3.0'
 gem 'omniauth'
 gem 'devise_token_auth'
 
+# Image processing
+gem 'carrierwave', '~> 1.0'
+gem "fog-aws"
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.7'

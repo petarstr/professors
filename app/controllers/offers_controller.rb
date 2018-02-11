@@ -24,6 +24,7 @@ class OffersController < ApplicationController
 
     OffersService.instance.update_offer(prof_id, offer_id, body)
   end
+
   def destroy
   end
 end

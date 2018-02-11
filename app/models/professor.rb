@@ -4,11 +4,13 @@ class Professor < ActiveRecord::Base
           :recoverable, :rememberable, :trackable, :validatable,
           :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
+  mount_uploader :image, AvatarUploader
 
   DEFAULT_PROFESSOR_FIELDS = [
     :username,
     :first_name,
     :last_name,
+    :email,
     :mobile_phone,
     :phone,
     :city_id,

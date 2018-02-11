@@ -16,6 +16,7 @@ class ProfessorsService
     prof.street_number = body['street_number']
     prof.floor = body['floor']
     prof.apartment_number = body['apartment_number']
+    prof.image = body['image']
 
     prof.save!
   end
