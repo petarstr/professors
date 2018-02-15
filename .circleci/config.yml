@@ -7,5 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Bundle Install
+          command: bundle install
+      - run:
           name: Running Tests
-          command: bundle exec rspec 
+          command: bundle exec rspec
