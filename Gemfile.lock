@@ -111,6 +111,7 @@ GEM
     pg (0.21.0)
     puma (3.11.2)
     rack (2.0.4)
+    rack-cors (1.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.6)
@@ -195,6 +196,7 @@ DEPENDENCIES
   omniauth
   pg (~> 0.18)
   puma (~> 3.0)
+  rack-cors
   rails (~> 5.0.6)
   rspec-rails (~> 3.7)
   spring

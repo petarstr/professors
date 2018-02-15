@@ -15,7 +15,8 @@ Subject.find_or_create_by!(title: 'Matematika 1', year: 1, course_id: course_1.i
 User.create!(
   uid: 'test_user@gmail.com',
   password: 'testpassword',
-  email: 'test_user@gmail.com'
+  email: 'test_user@gmail.com',
+  course_id: course.id
 )
 
 Professor.create!(

@@ -12,7 +12,11 @@ Rails.application.routes.draw do
 
   mount_devise_token_auth_for 'Professor', at: 'professor'
   as :professor do
-    resources :professors, only: [:edit, :update] do
+    resources :professors, only: [] do
+      collection do
+        put '/', to: 'professors#update'
+        get 'edit', to: 'professors#edit'
+      end
       resources :offers
     end
   end

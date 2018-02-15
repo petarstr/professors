@@ -19,6 +19,7 @@ class Professor < ActiveRecord::Base
     :street_name,
     :street_number,
     :floor,
-    :apartment_number
+    :apartment_number,
+    :image
   ]
 end
