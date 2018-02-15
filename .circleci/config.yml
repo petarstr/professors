@@ -1,9 +1,8 @@
 version: 2
 jobs:
   build:
-    machine:
-      - ruby:
-          version: 2.4.0
+    docker:
+      - image: circleci/ruby:2.4
         environment:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
