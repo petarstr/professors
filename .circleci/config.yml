@@ -1,18 +1,18 @@
 version: 2
 jobs:
   build:
-    machine:
-      ruby:
-        version: 2.4.0
-    environment:
-      RAILS_ENV: test
-      PGHOST: 127.0.0.1
-      PGUSER: root
-    image: circleci/10.1-alpine-postgis-ram
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_DB: professors_test
-      POSTGRES_PASSWORD: ""
+    - machine:
+        ruby:
+          version: 2.4.0
+      environment:
+        - RAILS_ENV: test
+        - PGHOST: 127.0.0.1
+        - PGUSER: root
+    - image: circleci/10.1-alpine-postgis-ram
+      environment:
+      - POSTGRES_USER: root
+      - POSTGRES_DB: professors_test
+      - POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run:
