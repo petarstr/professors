@@ -9,10 +9,10 @@ jobs:
         PGHOST: 127.0.0.1
         PGUSER: root
       image: circleci/postgres:10.1-alpine
-        environment:
-          POSTGRES_USER: root
-          POSTGRES_DB: professors_test
-          POSTGRES_PASSWORD: ""
+      environment:
+        POSTGRES_USER: root
+        POSTGRES_DB: professors_test
+        POSTGRES_PASSWORD: ""
     steps:
       - checkout
       - run:
