@@ -7,7 +7,7 @@ jobs:
           RAILS_ENV: test
           PGHOST: 127.0.0.1
           PGUSER: root
-      - image: circleci/10.1-alpine-postgis-ram
+      - image: circleci/latest
         environment:
           POSTGRES_USER: root
           POSTGRES_DB: professors_test
