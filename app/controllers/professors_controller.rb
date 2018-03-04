@@ -9,4 +9,8 @@ class ProfessorsController < ApplicationController
     ProfessorsService.instance.edit_profile(current_professor.id, params)
     204
   end
+
+  def show
+    render json: Professor.find(params[:id]).as_json(include: [:city])
+  end
 end

@@ -5,6 +5,7 @@ class Professor < ActiveRecord::Base
           :confirmable, :omniauthable
   include DeviseTokenAuth::Concerns::User
   mount_uploader :image, AvatarUploader
+  belongs_to :city
 
   DEFAULT_PROFESSOR_FIELDS = [
     :username,

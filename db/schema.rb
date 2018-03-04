@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209095940) do
+ActiveRecord::Schema.define(version: 20180301150500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180209095940) do
     t.boolean  "professor_place",    default: true
     t.datetime "created_at",         default: '2018-02-11 17:40:59', null: false
     t.datetime "updated_at",         default: '2018-02-11 17:40:59', null: false
+    t.boolean  "active",             default: true,                  null: false
     t.index ["professor_id"], name: "index_offers_on_professor_id", using: :btree
   end
 

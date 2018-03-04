@@ -9,6 +9,29 @@ describe OffersController do
     Offer.destroy_all
   end
 
+  describe '#index', type: :request do
+    let!(:offer) do
+      o = Offer.create!(
+        professor_id: professor.id,
+        title: 'Offer Title',
+        description: 'Best offer description you will ever find.',
+        number_of_sessions: 6,
+        user_place: false,
+        professor_place: true
+      )
+      o.subjects << subject
+      Price.create!(offer_id: o.id, student_count: 4, price: 1200)
+      o
+    end
+    it 'should show all offers' do
+      get "/professors/#{professor.id}/offers", params: {}, headers: professor.create_new_auth_token
+      result = JSON.parse(response.body)
+      expect(result['prices'].length).to be > 0
+      expect(result['subjects'].length).to be > 0
+      expect(result['professor']['id']).to eq professor.id
+    end
+  end
+
   describe '#create', type: :request do
     let(:body) do
       {
