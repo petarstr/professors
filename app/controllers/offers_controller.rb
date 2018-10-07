@@ -18,10 +18,11 @@ class OffersController < ApplicationController
   end
 
   def show
-    prof_id = params[:professor_id]
-    offer_id = params[:id]
+    # prof_id = params[:professor_id]
+    # Offer.find_by(professor_id: prof_id, id: offer_id).as_json(include: Offer::ASSOCIATED_OFFER_OBJECTS)
+    offer_id = params[:offer_id]
 
-    render json: Offer.find_by(professor_id: prof_id, id: offer_id).as_json(include: Offer::ASSOCIATED_OFFER_OBJECTS)
+    render json: Offer.find_by(id: offer_id).as_json(include: Offer::ASSOCIATED_OFFER_OBJECTS)
   end
 
   def edit
@@ -51,7 +52,7 @@ class OffersController < ApplicationController
 
   def search
     subject_id = params[:subject_id]
-    result = Offer.joins(:subjects).where('subjects.id = ?', subject_id).as_json(include: [
+    result = Offer.joins(:subjects).where(subjects: { id: subject_id }, active: true).as_json(include: [
       :professor,
       :prices,
       subjects: { include: { course: { include: [:faculty] }}}

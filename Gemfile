@@ -27,8 +27,7 @@ gem 'rack-cors'
 
 # Need omniauth for devise omniauthable
 gem 'omniauth'
-gem 'devise_token_auth'
-
+gem 'devise_token_auth', '~> 0.2.0'
 # Image processing
 gem 'carrierwave', '~> 1.0'
 gem "fog-aws"

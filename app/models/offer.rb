@@ -4,5 +4,5 @@ class Offer < ApplicationRecord
   has_and_belongs_to_many :subjects
   has_many :prices, -> { order(:price => :asc) }, dependent: :destroy
 
-  ASSOCIATED_OFFER_OBJECTS = [:subjects, :prices]
+  ASSOCIATED_OFFER_OBJECTS = [:subjects, :prices, :professor]
 end

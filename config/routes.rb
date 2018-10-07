@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'courses/:id/subjects', to: 'subjects#index'
   get 'search/:subject_id', to: 'offers#search'
 
+  get 'offers/:offer_id', to: 'offers#show'
+
   mount_devise_token_auth_for 'Professor', at: 'professor'
   post 'professor/offers', to: 'offers#create'
   get 'professor/offers/:offer_id', to: 'offers#edit'
